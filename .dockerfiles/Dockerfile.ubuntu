@@ -21,7 +21,7 @@ RUN         chsh -s /usr/bin/zsh
 
 # pyenv settings
 RUN         echo 'export PATH="/root/.pyenv/bin:$PATH"' >> ~/.zshrc
-RUN         echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+RUN         echo 'eval "$(pyenv init -)"' >> ~  /.zshrc
 RUN         echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 
 # pyenv virualenv

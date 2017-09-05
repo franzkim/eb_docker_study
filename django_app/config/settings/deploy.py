@@ -8,10 +8,10 @@ WSGI_APPLICATION = 'config.wsgi.deploy.application'
 
 # Static URLs
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+STATIC_ROOT = os.path.join(ROOT_DIR, '.static_root')
 
 # DEBUG MODE
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = config_secret_deploy['django']['allowed_hosts']
 
 # Database
