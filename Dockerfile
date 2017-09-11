@@ -20,6 +20,13 @@ COPY        .config/nginx/nginx-app.conf /etc/nginx/sites-available/nginx-app.co
 RUN         rm -rf /etc/nginx/sites-enabled/default
 RUN         ln -sf /etc/nginx/sites-available/nginx-app.conf /etc/nginx/sites-enabled/nginx-app.conf
 
+# front프로젝트 복사
+WORKDIR     /srv
+RUN         git clone https://github.com/franzkim/front-example.git front
+WORKDIR     /srv/front
+RUN         npm install
+RUN         npm run build
+
 ## collectstatic 실행
 #RUN         /root/.pyenv/versions/eb_docker_study/bin/python /srv/eb_docker_study/django_app/manage.py collectstatic --settings=config.settings.deploy --noinput
 
